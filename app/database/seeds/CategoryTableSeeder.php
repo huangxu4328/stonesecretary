@@ -9,12 +9,13 @@ class CategoryTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 5) as $index)
+		foreach(range(1, 3) as $index)
 		{
 			Category::create([
 				'name' => $faker->sentence($nWords = 6),
-				'parent_id' => 0,
-				'path' => 0,
+				'parent' => 4,
+				'path' => '0-4',
+				'user_id' => 1,
 			]);
 		}
 	}

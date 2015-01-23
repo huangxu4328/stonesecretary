@@ -11,6 +11,7 @@ T<?php
 |
 */
 
+Route::get('/', 'HomeController@showWelcome');
 Route::get(
 	'admin/logout',
 	array(

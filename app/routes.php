@@ -29,7 +29,7 @@ Route::post(
 	'admin/login',
 	array(
 		'as' => 'admin.login.post',
-		'uses' => 'App\Controllers\Admin\AuthController@postLogin'
+		'uses' => 'App\Controllers\Admin\AuthController@postTLogin'
 	)
 );
 

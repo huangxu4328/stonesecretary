@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Stone Secretary_login</title>
-	@include('admin._partials_assets')
+	@include('admin._partials.assets')
 </head>
 <body id="login">
 
@@ -15,12 +15,12 @@
 
 			<a href="#">
 
-				<img id="logo" src="resources/images/logo.png" alt="Simpla Admin logo" />
+				<img id="logo" src="/images/logo.png" alt="Simpla Admin logo" />
 
 			</a> 
 		</div>
 
-		
+		@yield('main')
 	</div>
 </body>
 </html>

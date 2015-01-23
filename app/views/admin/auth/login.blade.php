@@ -1,47 +1,68 @@
-@extends('admin._layouts.default')
+@extends('admin._layouts.login')
 
 @section('main')
 
-    <div id="login" class="login">
+        <div id="login-content">
 
-        {{ Form::open() }}
+            {{ Form::open() }}
 
-        @if ($errors->has('login'))
+            <form action="index.html">
 
-            <div class="alert alert-error">{{ $errors->first('login', ':message') }}</div>
+                @if ($errors->has('login'))
 
-        @endif
+                <div class="notification information png_bg">
 
-        <div class="control-group">
+                    <div> Just click "Sign In". No password needed. </div>
 
-            {{ Form::label('email', 'Email') }}
+                </div>
 
-            <div class="controls">
+                @endif
 
-                {{ Form::text('email') }}
+                <p>
 
-            </div>
+                    <!--<label></label>-->
+
+                    {{ Form::label('', 'Username') }}
+
+                    <!--<input class="text-input" type="text" />-->
+
+                    {{ Form::inputEmail() }}
+
+
+                </p>
+
+                <div class="clear"></div>
+
+                <p>
+
+                    <!--<label>Password</label>-->
+
+                    {{ Form::label('', 'Password') }}
+
+                    <!--<input class="text-input" type="password" />-->
+
+                    {{ Form::inputPwd() }}
+
+                </p>
+
+                <div class="clear"></div>
+
+                <!--<p id="remember-password">
+
+                    <input type="checkbox" />
+
+                    Remember me
+                </p>-->
+
+                <div class="clear"></div>
+
+                <p>
+
+                    <!--<input class="button" type="submit" value="Sign In" />-->
+                    
+                    {{ Form::submit('Login', array('class' => 'button')) }}
+                </p>
+            </form>
         </div>
-
-        <div class="control-group">
-
-            {{ Form::label('password', 'Password') }}
-
-            <div class="controls">
-
-                {{ Form::password('password') }}
-
-            </div>
-        </div>
-
-        <div class="form-actions">
-
-            {{ Form::submit('Login', array('class' => 'btn btn-inverse btn-login')) }}
-
-        </div>
-
-        {{ Form::close() }}
-
-    </div>
 
 @stop

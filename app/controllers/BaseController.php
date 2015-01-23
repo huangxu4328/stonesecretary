@@ -11,6 +11,7 @@ class BaseController extends Controller {
 	{
 		if ( ! is_null($this->layout))
 		{
+			$a = "ddd";
 			$this->layout = View::make($this->layout);
 		}
 	}

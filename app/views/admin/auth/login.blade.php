@@ -4,7 +4,7 @@
 
         <div id="login-content">
 
-            {{ Form::open(['url' => 'admin/']) }}
+            {{ Form::open() }}
 
             <form action="index.html">
 

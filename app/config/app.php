@@ -124,6 +124,7 @@ return array(
 
 		'Way\Generators\GeneratorsServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Krucas\Notification\NotificationServiceProvider'
 
 	),
 
@@ -193,7 +194,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 
 		'Sentry'			=> 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-
+		'Notification' 		=> 'Krucas\Notification\Facades\Notification'
 	),
 
 );

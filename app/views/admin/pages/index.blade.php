@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: weaponhsu
- * Date: 15-1-24
- * Time: 下午11:19
- */
+@extends('admin._layouts.default')
+
+@section('main')
+
+    <h1>category-index</h1>

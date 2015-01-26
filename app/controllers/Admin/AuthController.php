@@ -13,10 +13,10 @@ class AuthController extends BaseController {
 	public function getLogin()
 	{
 		Form::macro('inputEmail',function(){
-			return '<input type="text" class="text-input"/>';
+			return '<input type="text" class="text-input" name="email"/>';
 		});
 		Form::macro('inputPwd', function(){
-			return '<input type="password" class="text-input" />';
+			return '<input type="password" class="text-input" name="password" />';
 		});
 //		Form::macro('inputSub', function(){
 //			return '<input type="submit" class="button"/>';
@@ -41,7 +41,7 @@ class AuthController extends BaseController {
 
 			if ($user)
 			{
-				return Redirect::route('admin.pages.index');
+				return Redirect::route('admin.category.index');
 			}
 		}
 		catch(\Exception $e)

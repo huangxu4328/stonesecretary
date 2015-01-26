@@ -33,10 +33,15 @@ Route::post(
 		'uses' => 'App\Controllers\Admin\AuthController@postLogin'
 	)
 );
-
+Route::get(
+	'category',
+	[
+		'as' => 'admin.category',
+		'uses' => 'App\Controllers\Admin\CategoryController@index',
+	]
+);
 Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
 {
 	Route::any('/', 'App\Controllers\Admin\AuthController@test');
-	Route::resource('articles', 'App\Controllers\Admin\ArticlesController');
-	Route::resource('pages', 'App\Controllers\Admin\AuthController@test');
+	Route::resource('category', 'App\Controllers\Admin\CategoryController');
 });

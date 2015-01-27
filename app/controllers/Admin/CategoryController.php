@@ -10,12 +10,23 @@
     use Category;
     use Auth, BaseController, View, Form, Input, Redirect, Sentry, Notification, URL;
 
-    class CategoryController extends AuthController {
+    class CategoryController extends BaseController {
 
         public function index(){
             $categoryRes = Category::where('user_id', '=', '1')->where('parent', '=', '0', 'or')->orderBy('id','asc')->get();
             $category = $this->leftMenu($categoryRes);
+//            $categoryRes = (array)$category;
+//            var_dump($categoryRes);
+//            exit;
+            return View::make('admin.category.index')
+                    ->with('category', $category['category'])
+                    ->with('subCategory', $category['subCategory']);
+        }
 
-            return View::make('admin.category.index')->with('category', $category['category'])->with('subCategory', $category['subCategory']);
+        public function subCategory(){
+            echo 'ddd';
+            exit;
+            $subCategory = Category::where('parent', '=', $id)->get();
+
         }
     }

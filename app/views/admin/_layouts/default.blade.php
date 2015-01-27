@@ -18,7 +18,7 @@
             <ul id="main-nav">
                 @foreach($category as $key => $val)
                     <li>
-                        <a href="#" class="nav-top-item no-submenu">
+                        <a href="/admin/page/{{$val->id}}" class="nav-top-item no-submenu">
                             {{$val->name}}
                         </a>
                         <ul>

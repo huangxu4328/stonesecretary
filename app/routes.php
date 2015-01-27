@@ -33,13 +33,13 @@ Route::get(
 //		'uses' => 'App\Controllers\Admin\AuthController@postLogin'
 //	)
 //);
-//Route::get(
-//	'category',
-//	[
-//		'as' => 'admin.category',
-//		'uses' => 'App\Controllers\Admin\CategoryController@index',
-//	]
-//);
+Route::get(
+	'category',
+	[
+		'as' => 'admin.category',
+		'uses' => 'App\Controllers\Admin\CategoryController@index',
+	]
+);
 //Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
 //{
 //	Route::any('/', 'App\Controllers\Admin\AuthController@test');

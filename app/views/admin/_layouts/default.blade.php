@@ -8,6 +8,7 @@
     @include('admin._partials.assets')
 
 </head>
+{{--<body>--}}
 <div id="body-wrapper">
     <!-- Wrapper for the radial gradient background -->
     <div id="sidebar">
@@ -34,9 +35,7 @@
             </ul>
         </div>
     </div>
-
     @yield('main')
-
 </div>
 </body>
 </html>

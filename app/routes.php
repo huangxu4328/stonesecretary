@@ -1,4 +1,4 @@
-T<?php
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -11,14 +11,14 @@ T<?php
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
-Route::get(
-	'admin/logout',
-	array(
-		'as' => 'admin.logout',
-		'uses' => 'App\Controllers\Admin\AuthController@getLogout'
-	)
-);
+//Route::get('/', 'HomeController@showWelcome');
+//Route::get(
+//	'admin/logout',
+//	array(
+//		'as' => 'admin.logout',
+//		'uses' => 'App\Controllers\Admin\AuthController@getLogout'
+//	)
+//);
 Route::get(
 	'admin/login',
 	array(
@@ -26,22 +26,22 @@ Route::get(
 		'uses' => 'App\Controllers\Admin\AuthController@getLogin'
 	)
 );
-Route::post(
-	'admin/login',
-	array(
-		'as' => 'admin.login.post',
-		'uses' => 'App\Controllers\Admin\AuthController@postLogin'
-	)
-);
-Route::get(
-	'category',
-	[
-		'as' => 'admin.category',
-		'uses' => 'App\Controllers\Admin\CategoryController@index',
-	]
-);
-Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
-{
-	Route::any('/', 'App\Controllers\Admin\AuthController@test');
-	Route::resource('category', 'App\Controllers\Admin\CategoryController');
-});
+//Route::post(
+//	'admin/login',
+//	array(
+//		'as' => 'admin.login.post',
+//		'uses' => 'App\Controllers\Admin\AuthController@postLogin'
+//	)
+//);
+//Route::get(
+//	'category',
+//	[
+//		'as' => 'admin.category',
+//		'uses' => 'App\Controllers\Admin\CategoryController@index',
+//	]
+//);
+//Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
+//{
+//	Route::any('/', 'App\Controllers\Admin\AuthController@test');
+//	Route::resource('category', 'App\Controllers\Admin\CategoryController');
+//});

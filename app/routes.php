@@ -50,7 +50,7 @@ Route::get(
 Route::get(
 	'admin/page',
 	[
-		'as' => 'admin.page',
+		'as' => 'admin.page.index',
 		'uses' => 'App\Controllers\Admin\PageController@index',
 	]
 );
@@ -58,7 +58,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
 {
 	Route::any('/', 'App\Controllers\Admin\AuthController@test');
 	Route::resource('category', 'App\Controllers\Admin\CategoryController');
-	Route::resource('page', 'App\Controllers\Admin\PageController');
+	Route::resource('page', 'App\Controllers\Admin\PageController@index');
 });
 
 //前端路由

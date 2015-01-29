@@ -12,10 +12,14 @@ use Auth, BaseController, View, Form, Input, Redirect, Sentry, Notification, URL
 
 class PageController extends AuthController{
     public function index($id){
-        echo phpinfo();
-        exit;
-        echo 'PageController-index';
-
+        $categoryRes = Category::where('user_id', '=', '1')->where('parent', '=', '0', 'or')->orderBy('id','asc')->get();
+        foreach($categoryRes as $val){
+            var_dump($val->id);
+        }
+        $category = $this->leftMenu($categoryRes);
+        return View::make('admin.pages.index')
+            ->with('category', $category['category'])
+            ->with('subCategory', $category['subCategory']);
     }
 
     public function edit(){

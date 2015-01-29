@@ -15,9 +15,21 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
-	{
-		return View::make('hello');
+	public function index($name){
+		echo $name;
+//    return View::make('hello');
+	}
+
+	public function aboutus($name, $culture){
+		echo $name.'----'.$culture.'----aboutus!';
+	}
+
+	public function productList($name, $id){
+		echo $name.'---'.$id.'---productList';
+	}
+
+	public function productInfo($name, $id, $pid){
+		echo $name.'---'.$id.'----'.$pid.'---productList';
 	}
 
 }
